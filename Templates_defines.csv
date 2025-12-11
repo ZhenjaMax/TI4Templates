@@ -5,7 +5,7 @@ CardIndex,"#padl;{1};0;![deckindex]#"
 CardCount,"#padl;{1};0;![cardcount]#"
 CardNumber,"@[CardIndex,{1}]/@[CardCount,{1}]"
 CardInRow,"#sc;0;1;1#"
-HR,<br><br><ac><img=Images\Symbol_HR.png#(if {1} != #empty then ;{1};{1})#></ac><br><br>
+HR,<ac><img=Images\Symbol_HR.png#(if {1} != #empty then ;{1};{1})#></ac>
 Dot,<img=Images\Symbol_Dot.png>
 Star,◆
 Die,<Img=Images\Symbol_Die.png>
