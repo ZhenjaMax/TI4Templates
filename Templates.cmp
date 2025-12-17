@@ -22,15 +22,15 @@
     <Element variable="@[RowNumber] - @[CardNumber,3] - @[Version Number]" type="Text" x="100" y="-2" width="350" height="50" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="0" verticalalign="0" colortype="0" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="14" wordspace="0" justifiedtext="false" name="RefNumber" layoutreference="Action" elementreference="RefNumber" font="Myriad Pro;24;1;0;0;0" elementcolor="0xFFFFFFFF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" colormatrix="" />
     <Element variable="&lt;caps&gt;@[Title]$[gradient:points;0xffffff;0;0;970;0]" type="FormattedText" x="115" y="86" width="970" height="300" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="1" verticalalign="1" colortype="0" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="89" wordspace="0" justifiedtext="false" name="Title" font="Russo One;62;0;0;0;0" elementcolor="0x7BCADCFF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" colormatrix="" />
     <Element variable="@[Note]" type="FormattedText" x="277" y="391" width="651" height="94" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="1" verticalalign="1" colortype="0" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="14" wordspace="0" justifiedtext="false" name="Note" font="Myriad Pro;47;1;0;0;0" elementcolor="0xF7F456FF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" gradient="" colormatrix="" />
-    <Element variable="@[Text]" type="FormattedText" x="206" y="548" width="811" height="1053" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="0" verticalalign="0" colortype="0" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="77" wordspace="0" justifiedtext="false" name="Text" font="Myriad Pro;50;1;0;0;0" elementcolor="0x000000FF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" colormatrix="" />
-    <Element variable="#(if @[Type] == back then Images\Agendas\Agenda_Back.png else Images\Agendas\Blank\Agenda_Background_@[Type]_Blank.png)#" type="Graphic" x="0" y="0" width="1200" height="1764" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="0" verticalalign="0" colortype="0" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="14" wordspace="0" justifiedtext="false" name="Background" font="Arial;12;0;0;0;0" elementcolor="0x000000FF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" colormatrix="" />
+    <Element variable="@[Text]" type="FormattedText" x="202" y="548" width="822" height="1053" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="0" verticalalign="0" colortype="0" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="76" wordspace="0" justifiedtext="false" name="Text" font="Myriad Pro;50;0;0;0;0" elementcolor="0x000000FF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" colormatrix="" />
+    <Element variable="#(if @[Type] == back then Images\Agendas\Agenda_Back.png else Images\Agendas\Agenda_Background_@[Type]_Blank.png)#" type="Graphic" x="0" y="0" width="1200" height="1764" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="0" verticalalign="0" colortype="0" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="14" wordspace="0" justifiedtext="false" name="Background" font="Arial;12;0;0;0;0" elementcolor="0x000000FF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" colormatrix="" />
     <Reference RelativePath="excel;C:\Users\zhenj\OneDrive\Рабочий стол\TI4Templates\Template_Data.xlsx;Agendas" Default="true" />
     <exportRotation>0</exportRotation>
     <exportTransparentBackground>false</exportTransparentBackground>
     <exportPDFAsPageBack>false</exportPDFAsPageBack>
     <exportWidth>0</exportWidth>
     <exportHeight>0</exportHeight>
-    <zoom>0.8</zoom>
+    <zoom>0.7</zoom>
     <exportLayoutBorder>false</exportLayoutBorder>
     <exportLayoutBorderCrossSize>0</exportLayoutBorderCrossSize>
   </Layout>
@@ -651,7 +651,7 @@
     <exportLayoutBorderCrossSize>0</exportLayoutBorderCrossSize>
   </Layout>
   <translatorName>Incept</translatorName>
-  <lastExportPath>C:\Users\zhenj\OneDrive\Рабочий стол\DS\results</lastExportPath>
+  <lastExportPath>C:\Users\zhenj\OneDrive\Рабочий стол\TI4Templates\Output</lastExportPath>
   <jsTildeMeansCode>true</jsTildeMeansCode>
   <jsKeepFunctions>true</jsKeepFunctions>
   <jsSingleQuoteStartsCode>true</jsSingleQuoteStartsCode>
