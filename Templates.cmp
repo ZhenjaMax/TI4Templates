@@ -30,7 +30,7 @@
     <exportPDFAsPageBack>false</exportPDFAsPageBack>
     <exportWidth>0</exportWidth>
     <exportHeight>0</exportHeight>
-    <zoom>0.7</zoom>
+    <zoom>0.6</zoom>
     <exportLayoutBorder>false</exportLayoutBorder>
     <exportLayoutBorderCrossSize>0</exportLayoutBorderCrossSize>
   </Layout>
