@@ -566,6 +566,7 @@
     <Element variable="#(if @[Upgrade] == 0 then #nodraw)# Images\Tech\My\FrameBoxColor#(if @[Cost] != #empty then 1)##(if @[Combat] != #empty then 2)##(if @[Move] != #empty then 3)##(if @[Capacity] != #empty then 4)#.png " type="Graphic" x="0" y="0" width="1764" height="1200" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="0" verticalalign="0" colortype="0" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="14" wordspace="0" justifiedtext="false" name="Frame box color" font="Arial;12;0;0;0;0" elementcolor="0x000000FF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" gradient="" colormatrix="" />
     <Element variable="#(if @[Upgrade] == 1 then #nodraw)# $[elementcolor:@[Color 4]] $[colortype:1] Images\Tech\My\Frame#(if @[Req] != #empty then Req)##(if @[Prereq 1] != #empty then Preq)#Color.png" type="Graphic" x="0" y="0" width="1764" height="1200" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="0" verticalalign="0" colortype="1" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="14" wordspace="0" justifiedtext="false" name="Frame color" font="Arial;20;0;0;0;0" elementcolor="0xFFFFFFFF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" gradient="" colormatrix="" />
     <Element variable="Images\Tech\My\Background.png" type="Graphic" x="0" y="0" width="1764" height="1200" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="0" verticalalign="0" colortype="0" opacity="252" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="14" wordspace="0" justifiedtext="false" name="Background" font="Arial;12;0;0;0;0" elementcolor="0x000000FF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" colormatrix="" />
+    <Reference RelativePath="excel;Template_Data.xlsx;Technologies" Default="true" />
     <exportRotation>0</exportRotation>
     <exportTransparentBackground>false</exportTransparentBackground>
     <exportPDFAsPageBack>false</exportPDFAsPageBack>
@@ -580,5 +581,5 @@
   <jsTildeMeansCode>true</jsTildeMeansCode>
   <jsKeepFunctions>true</jsKeepFunctions>
   <jsSingleQuoteStartsCode>true</jsSingleQuoteStartsCode>
-  <collapsedNodes>0;1;2;3;4;5;6;7;8;9;10;13;14;15;16;17;18;19;20;21;22;23</collapsedNodes>
+  <collapsedNodes>0;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21</collapsedNodes>
 </Project>
