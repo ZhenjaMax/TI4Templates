@@ -7,7 +7,7 @@ CardNumber,"@[CardIndex,{1}]/@[CardCount,{1}]"
 CardInRow,"#sc;0;1;1#"
 HR,<ac><img=Images\Symbol_HR.png#(if {1} != #empty then ;{1};{1};750;100)#></ac><br>
 Dot,<img=Images\Symbol_Dot.png>
-Star,◆
+Star,✦
 Die,<Img=Images\Symbol_Die.png>
 Cancel,<img=Images\Symbol_No.png>
 TechUp,<ar><img=Images\Icon_Up_Arrow.png;0.9>
