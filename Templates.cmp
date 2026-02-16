@@ -612,10 +612,25 @@
     <exportLayoutBorder>false</exportLayoutBorder>
     <exportLayoutBorderCrossSize>0</exportLayoutBorderCrossSize>
   </Layout>
+  <Layout combineReferences="false" width="2716" height="2362" buffer="0" Name="Tile" defaultCount="1" dpi="600" drawBorder="false">
+    <Element variable="@[Background]" type="Graphic" x="0" y="0" width="2716" height="2362" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="0" verticalalign="0" colortype="0" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="14" wordspace="0" justifiedtext="false" name="Background" font="Arial;12;0;0;0;0" elementcolor="0x000000FF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" gradient="" colormatrix="" />
+    <Reference RelativePath="excel;Template_Data.xlsx;Tiles" Default="true" />
+    <exportNameFormat />
+    <exportRotation>0</exportRotation>
+    <exportTransparentBackground>false</exportTransparentBackground>
+    <exportBackgroundColor>0xFFFFFFFF</exportBackgroundColor>
+    <exportPDFAsPageBack>false</exportPDFAsPageBack>
+    <exportWidth>5700</exportWidth>
+    <exportHeight>4950</exportHeight>
+    <zoom>0.2</zoom>
+    <exportLayoutBorder>false</exportLayoutBorder>
+    <exportLayoutBorderCrossSize>0</exportLayoutBorderCrossSize>
+    <exportCropDefinition />
+  </Layout>
   <translatorName>Incept</translatorName>
   <lastExportPath>C:\Users\zhenj\OneDrive\Рабочий стол\TI4Templates\Output</lastExportPath>
   <jsTildeMeansCode>true</jsTildeMeansCode>
   <jsKeepFunctions>true</jsKeepFunctions>
   <jsSingleQuoteStartsCode>true</jsSingleQuoteStartsCode>
-  <collapsedNodes>0;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21;22;23</collapsedNodes>
+  <collapsedNodes>2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21;22;23</collapsedNodes>
 </Project>
