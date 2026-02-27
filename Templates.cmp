@@ -657,8 +657,8 @@
     <exportTransparentBackground>false</exportTransparentBackground>
     <exportBackgroundColor>0xFFFFFFFF</exportBackgroundColor>
     <exportPDFAsPageBack>false</exportPDFAsPageBack>
-    <exportWidth>5700</exportWidth>
-    <exportHeight>4950</exportHeight>
+    <exportWidth>2787</exportWidth>
+    <exportHeight>2433</exportHeight>
     <zoom>0.3</zoom>
     <exportLayoutBorder>false</exportLayoutBorder>
     <exportLayoutBorderCrossSize>0</exportLayoutBorderCrossSize>
