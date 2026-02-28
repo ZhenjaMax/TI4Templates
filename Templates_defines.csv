@@ -29,23 +29,12 @@ Green,<img=Images\Faction Reference\Reference_Tech_Green.png>
 Red,<img=Images\Faction Reference\Reference_Tech_Red.png>
 Yellow,<img=Images\Faction Reference\Reference_Tech_Yellow.png>
 Blue,<img=Images\Faction Reference\Reference_Tech_Blue.png>
-0R,<img=Images\Faction Reference\Reference_Planet_0R.png.png>
-R,<img=Images\Faction Reference\Reference_Planet_{1}R.png>
-I,<img=Images\Faction Reference\Reference_Planet_{1}I.png>
 For,<i><b>For: </b></i>
 Against,<i><b>Against: </b></i>
 Action,<i><b>ACTION: </b></i>
 Attach,<i><b>ATTACH: </b></i>
-Planet Ready TextBox,Images\Planets\Planet_Ready_Textbox_{1}.png
-Planet Exhausted TextBox,Images\Planets\Planet_Exhausted_Textbox_{1}.png
 LogoEronousTiles,Images\Logo_Eronous_Tiles.png
-ScaledValue,"#math;@[PlanetScale]*{1}#"
 HalfSize,"#math;@[Size{1}]/2#"
-CenterDiff,"#math;@[PlanetSize]*#math;@[Center{1}]/@[Size{1}]##"
-OverrideWidth,"#math;@[PlanetSize]*@[PlanetScale]#"
-OverrideHeight,"#math;@[PlanetSize]*@[PlanetScale]#"
-OverrideX,"#math;@[Planet{1}X]-@[ScaledValue,@[CenterDiff,X]];0#"
-OverrideY,"#math;@[Planet{1}Y]-@[ScaledValue,@[CenterDiff,Y]];0#"
 HeaderStart,<font=Slider TI4><caps>
 HeaderEnd,</caps>
 BodyStart,<fscl=1.0;1.0><font=Myriad Pro><p=5;5>
