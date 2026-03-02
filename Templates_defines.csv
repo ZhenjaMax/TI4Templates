@@ -51,3 +51,5 @@ StrategyCardColor5,00a99d
 StrategyCardColor6,008ed4
 StrategyCardColor7,15489f
 StrategyCardColor8,752b90
+Planet Ready TextBox,Images\Planets\Planet_Ready_Textbox_{1}.png
+Planet Exhausted TextBox,Images\Planets\Planet_Exhausted_Textbox_{1}.png
