@@ -58,7 +58,7 @@
     <Element variable="Images\Breakthrough\Front\Background.png" type="Graphic" x="0" y="0" width="1764" height="1200" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="0" verticalalign="0" colortype="0" opacity="252" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="14" wordspace="0" justifiedtext="false" name="Background" font="Arial;12;0;0;0;0" elementcolor="0x000000FF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" colormatrix="" />
     <Reference RelativePath="excel;Template_Data.xlsx;Breakthroughs" Default="true" />
     <exportNameFormat />
-    <exportRotation>90</exportRotation>
+    <exportRotation>0</exportRotation>
     <exportTransparentBackground>false</exportTransparentBackground>
     <exportBackgroundColor>0xFFFFFFFF</exportBackgroundColor>
     <exportPDFAsPageBack>false</exportPDFAsPageBack>
