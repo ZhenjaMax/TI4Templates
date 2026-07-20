@@ -1,6 +1,7 @@
 ~*.*
 Emojis/
-Output/
+Output/.*
 Originals/
 *.pdf
 .~lock.*
+*.png
