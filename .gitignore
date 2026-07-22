@@ -4,4 +4,4 @@ Output/.*
 Originals/
 *.pdf
 .~lock.*
-*.png
+./*.png
