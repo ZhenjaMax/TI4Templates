@@ -719,7 +719,7 @@
     <exportLayoutBorderCrossSize>0</exportLayoutBorderCrossSize>
     <exportCropDefinition />
   </Layout>
-  <Layout combineReferences="false" width="2787" height="2433" buffer="0" Name="Tile" defaultCount="1" dpi="600" drawBorder="false">
+  <Layout combineReferences="false" width="2787" height="2433" buffer="0" Name="Tile Front" defaultCount="1" dpi="600" drawBorder="false">
     <Element variable="Images\Tiles\Cut_Lines_Tile.png" type="Graphic" x="0" y="0" width="2787" height="2433" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="0" verticalalign="0" colortype="0" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="14" wordspace="0" justifiedtext="false" name="Cut Lines" font="Arial;12;0;0;0;0" elementcolor="0x000000FF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" gradient="" colormatrix="" />
     <Element variable="Images/Tiles/Background mask.png" type="Graphic" x="0" y="0" width="2787" height="2433" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="0" verticalalign="0" colortype="0" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="14" wordspace="0" justifiedtext="false" name="Background Mask" font="Arial;12;0;0;0;0" elementcolor="0x000000FF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" gradient="" colormatrix="1;0;0;0;0;0;1;0;0;0;0;0;1;0;0;0;0;0;1;0;0;0;0;0;1" />
     <Element variable="@[ID]" type="FormattedText" x="97" y="1013" width="282" height="400" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="0" verticalalign="1" colortype="0" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="14" wordspace="0" justifiedtext="false" name="ID" font="Microsoft Sans Serif;28;0;0;0;0" elementcolor="0xFFFFFFE0" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" gradient="" colormatrix="" />
@@ -755,10 +755,29 @@
     <exportNameFormat />
     <exportRotation>0</exportRotation>
     <exportTransparentBackground>false</exportTransparentBackground>
+    <exportBackgroundColor>0xFFFFFFFF</exportBackgroundColor>
     <exportPDFAsPageBack>false</exportPDFAsPageBack>
     <exportWidth>2787</exportWidth>
     <exportHeight>2433</exportHeight>
     <zoom>0.2565483</zoom>
+    <exportLayoutBorder>false</exportLayoutBorder>
+    <exportLayoutBorderCrossSize>0</exportLayoutBorderCrossSize>
+    <exportCropDefinition />
+  </Layout>
+  <Layout combineReferences="false" width="2787" height="2433" buffer="0" Name="Tile Back" defaultCount="1" dpi="600" drawBorder="false">
+    <Element variable="Images\Tiles\Cut_Lines_Tile.png" type="Graphic" x="0" y="0" width="2787" height="2433" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="0" verticalalign="0" colortype="0" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="14" wordspace="0" justifiedtext="false" name="Cut Lines" font="Arial;12;0;0;0;0" elementcolor="0x000000FF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" gradient="" colormatrix="" />
+    <Element variable="Images/Tiles/Background mask.png" type="Graphic" x="0" y="0" width="2787" height="2433" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="0" verticalalign="0" colortype="0" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="14" wordspace="0" justifiedtext="false" name="Background Mask" font="Arial;12;0;0;0;0" elementcolor="0x000000FF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" gradient="" colormatrix="1;0;0;0;0;0;1;0;0;0;0;0;1;0;0;0;0;0;1;0;0;0;0;0;1" />
+    <Element variable="#(if @[Type] == Red then Images\Tiles\Anomaly Borders.png else #nodraw)#" type="Graphic" x="0" y="0" width="2787" height="2433" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="1" verticalalign="1" colortype="2" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="14" wordspace="0" justifiedtext="false" name="Anomaly Borders" font="Arial;12;0;0;0;0" elementcolor="0x000000FF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" gradient="" colormatrix="" />
+    <Element variable="#(if @[Type] == Red then Images\Tiles\Backs\Red No Lines.png else Images\Tiles\Backs\@[Type].png)#" type="Graphic" x="0" y="0" width="2787" height="2433" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="0" verticalalign="0" colortype="2" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="14" wordspace="0" justifiedtext="false" name="Background" font="Arial;12;0;0;0;0" elementcolor="0x000000FF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" gradient="" colormatrix="1;0;0;0;0;0;1;0;0;0;0;0;1;0;0;0;0;0;1;0;0;0;0;0;1" />
+    <Reference RelativePath="excel;Template_Data.xlsx;Tiles" Default="true" />
+    <exportNameFormat />
+    <exportRotation>0</exportRotation>
+    <exportTransparentBackground>false</exportTransparentBackground>
+    <exportBackgroundColor>0xFFFFFFFF</exportBackgroundColor>
+    <exportPDFAsPageBack>true</exportPDFAsPageBack>
+    <exportWidth>2787</exportWidth>
+    <exportHeight>2433</exportHeight>
+    <zoom>0.25</zoom>
     <exportLayoutBorder>false</exportLayoutBorder>
     <exportLayoutBorderCrossSize>0</exportLayoutBorderCrossSize>
     <exportCropDefinition />
