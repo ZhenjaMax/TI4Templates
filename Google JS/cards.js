@@ -1,6 +1,6 @@
 function ACTION_EFFECT_CARD(conditionText, resolveText, fontSize, additionalResolveText = "") { return __getTextFormatted__(__filterTextList__(conditionText, resolveText, additionalResolveText).join(newLineChar), fontSize); }
 
-function ACTION_LORE_CARD(text, fontSize) { return __wrapLSFS__(text, fontSize); }
+function ACTION_LORE_CARD(text, fontSize) { return (__filterTextList__(text).length > 0) ? __applyStyles__(text, fontSize, false, __replaceParagraphs__, __wrapLSFS__) : ""; }
 
 function AGENDA_CARD(text1, text2, text3, binaryIndex, boldTextIndex, fontSize) {
   let texts = __filterTextList__(text1, text2, text3);
@@ -21,13 +21,15 @@ function AGENDA_CARD(text1, text2, text3, binaryIndex, boldTextIndex, fontSize) 
 
 function BREAKTHROUGH_CARD(text, fontSize) { return __getPushMarkup__(0, fontSize) + __getTextFormatted__(text, fontSize, true); }
 
+function EXPLORATION_EFFECT_CARD(text, fontSize) { return __getTextFormatted__(text, fontSize); }
+
+function EXPLORATION_LORE_CARD(text, fontSize) { return ACTION_LORE_CARD(text, fontSize); };
+
 function LEADER_FRONT_CARD(conditionText, resolveText, fontSize) { return __getTextFormatted__(__filterTextList__(conditionText, resolveText).join(newLineChar), fontSize); }
 
 function LEADER_BACK_UNLOCK_CARD(text, fontSize) { return (__filterTextList__(text).length === 0) ? "" : __getTextFormatted__(text, fontSize); }
 
-function LEADER_BACK_LORE_CARD(text, fontSize) {
-  return __applyStyles__(text, fontSize, false, __replaceParagraphs__, __wrapLSFS__);
-}
+function LEADER_BACK_LORE_CARD(text, fontSize) { return ACTION_LORE_CARD(text, fontSize); };
 
 function PROMISSORY_CARD(conditionText, resolveText, fontSize) {
   let texts = __filterTextList__(conditionText, resolveText);
