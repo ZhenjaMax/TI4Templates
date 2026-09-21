@@ -31,6 +31,12 @@ function LEADER_BACK_UNLOCK_CARD(text, fontSize) { return (__filterTextList__(te
 
 function LEADER_BACK_LORE_CARD(text, fontSize) { return ACTION_LORE_CARD(text, fontSize); };
 
+function PLANET_LORE_CARD(text, fontSize) { return ACTION_LORE_CARD(text, fontSize); }
+
+function PLANET_LEGENDARY_EFFECT_CARD(text, fontSize) { return EXPLORATION_EFFECT_CARD(text, fontSize); }
+
+function PLANET_LEGENDARY_LORE_CARD(text, fontSize) { return ACTION_LORE_CARD(text, fontSize); }
+
 function POLICY_EFFECT_CARD(text, fontSize) { return TECH_CARD(text, fontSize); }
 
 function PROMISSORY_CARD(conditionText, resolveText, fontSize) {
