@@ -22,11 +22,26 @@ const spaceChar = ' ';
 const hyphenChar = '-';
 
 const agendaPush = -43;
+const xTextShiftAmount = 120;
 const xAbilityShiftAmount = 120;
 const yAbilityShiftAmount = 325;
 const yAbilityShiftAmountSmall = 300;
 const starFontSize = 45;
 const starPush = 10;
+
+const unitImagesPush = {
+  Mech:        { x: 750, y: 350 },
+  Infantry:    { x: 750, y: 350 },
+  SpaceDock:   { x: 750, y: 350 },
+  PDS:         { x: 750, y: 350 },
+  Fighter:     { x: 750, y: 50  },
+  Flagship:    { x: 300, y: 50  },
+  Dreadnought: { x: 300, y: 50  },
+  Carrier:     { x: 300, y: 50  },
+  Cruiser:     { x: 300, y: 50  },
+  Destroyer:   { x: 300, y: 50  },
+  WarSun:      { x: 350, y: 45  },
+};
 
 function __getLineSpacing__(baseFontSize) { return Math.round(1.5*baseFontSize); }
 function __getAbilityFontSize__(baseFontSize) { return Math.round(0.8*baseFontSize); }

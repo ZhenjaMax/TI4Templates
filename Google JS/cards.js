@@ -19,7 +19,7 @@ function AGENDA_CARD(text1, text2, text3, binaryIndex, boldTextIndex, fontSize) 
   return __getTextFormatted__(texts.join(newLineChar), fontSize, true, __replaceAgendaBinaryChoices__);
 }
 
-function BREAKTHROUGH_CARD(text, fontSize) { return __getPushMarkup__(0, fontSize) + __getTextFormatted__(text, fontSize, true); }
+function BREAKTHROUGH_CARD(text, fontSize) { return (__filterTextList__(text).length > 0) ? __getPushMarkup__(0, fontSize) + __getTextFormatted__(text, fontSize, true) : ""; }
 
 function EXPLORATION_EFFECT_CARD(text, fontSize) { return __getTextFormatted__(text, fontSize); }
 
@@ -47,7 +47,7 @@ function PROMISSORY_CARD(conditionText, resolveText, fontSize) {
   return __getTextFormatted__(texts.join(newLineChar), fontSize, true);
 }
 
-function TECH_CARD(text, commonFontSize) { return __getPushMarkup__(0, Math.round(commonFontSize/2)) + __getTextFormatted__(text, commonFontSize); }
+function TECH_CARD(text, commonFontSize, textXshift = 0) { return (__filterTextList__(text).length > 0) ? ((textXshift === 1 ? `$[x:#math;&[x]+${xTextShiftAmount}#]$[width:#math;&[width]-${xTextShiftAmount}#]` : "") + __getPushMarkup__(0, Math.round(commonFontSize/2)) + __getTextFormatted__(text, commonFontSize)) : ""; }
 
 function TECH_CARD_UNIT_ABILITIES(
     abilityXshift, abilityYshift, specsBreakValue,
@@ -132,6 +132,9 @@ function TECH_CARD_UNIT_ABILITIES(
     overridesStr += `$[height:#math;&[height]-${yAbilityShiftAmountSmall}#]`;
   }
 
+  // specsBreakValue = -1,  => переносов нет;
+  // specsBreakValue = 0,   => перенос на каждой строке;
+  // specsBreakValue > 0,   => перенос после указанной строки один раз
   return overridesStr + lines
     .map((line, i) => {
         if (i === lines.length - 1) return line;
@@ -139,3 +142,5 @@ function TECH_CARD_UNIT_ABILITIES(
         return line + spaceChar + spaceChar;
     }).join("");
 }
+
+function TECH_CARD_UNIT_IMAGE(unitType, coordinateType) { return unitImagesPush[unitType][String(coordinateType).toLowerCase()] || 0; }
