@@ -143,4 +143,56 @@ function TECH_CARD_UNIT_ABILITIES(
     }).join("");
 }
 
-function TECH_CARD_UNIT_IMAGE(unitType, coordinateType) { return unitImagesPush[unitType][String(coordinateType).toLowerCase()] || 0; }
+function TECH_CARD_UNIT_IMAGE(unitType, coordinateType) { return unitImagesPush[unitType][coordinateType] || 0; }
+
+function TILE_CROSSHAIR_COORDS(amount, firstPlanetSpecial, secondPlanetSpecial) {
+  if (amount === 0) {
+    return "";
+  }
+  const preset = `P${firstPlanetSpecial === "L" ? firstPlanetSpecial : ""}${amount}${amount === 1 ? "1" : ""}${amount === 2 ? (firstPlanetSpecial === "" ? "2" : (secondPlanetSpecial === "" ? "1" : "")) : ""}`;
+  const {X, Y, D} = tileComponents.Crosshair[preset];
+  return `$[x:${X}]$[y:${Y}]$[width:${D}]$[height:${D}]`;
+}
+
+function TILE_PLANET_NAME(text, fontSize, index, amount, planetType, planetSpecial) {
+  if (text === "") {
+    return "";
+  }
+  const preset = __getTilePresetCommon__(index, amount, planetType, planetSpecial);
+  const { X, Y } = tileComponents.Name[preset];
+  return `$[x:${X}]$[y:${Y}]${__wrapFS__(text, fontSize)}`;
+}
+
+function TILE_PLANET_OBJECT_IMAGE(planetImage, objectImage, index, amount, X, Y, W, H) {
+  if (planetImage !== "") {
+    return `$[x:${X}]$[y:${Y}]$[width:${W}]$[height:${H}]Images/Planets/${planetImage}`;
+  } else if (objectImage !== "") {
+    const preset = `P${amount}${index}`;
+    if((X === "") || (Y === "")) {
+      ({X, Y} = tileComponents.Object[preset]);
+    }
+    return `$[x:${X}]$[y:${Y}]${((W !== "") && (H !== "")) ? `$[width:${W}]$[height:${H}]` : ""}Images/Tiles/${objectImage}`;
+  } else {
+    return "";
+  }
+}
+
+function TILE_PLANET_STATS(value, valueType, index, amount, planetType, planetSpecial) {
+  if(value === "") {
+    return "";
+  }
+  const preset = __getTilePresetCommon__(index, amount, planetType, planetSpecial);
+  const {X, Y} = tileComponents[valueType][preset];
+  return `$[x:${X}]$[y:${Y}]${value}`;
+}
+
+function TILE_PLANET_TEXTBOX(index, amount, planetType, planetSpecial) { return (planetType !== "") ? `${planetSpecial === "L" ? planetSpecial : ""}${tileComponents.TextBoxes[planetType] ?? ""}${amount}${index}` : ""; }
+
+function TILE_PLANET_SPECIAL_ICON(index, amount, planetSpecial) {
+  if ((planetSpecial === "") || (planetSpecial === "null") || (planetSpecial === "L")) {
+    return "";
+  }
+  const preset = `P${amount}${index}`;
+  const {X, Y} = tileComponents.Icon[preset];
+  return `$[x:${X}]$[y:${Y}]Images/Req${planetSpecial}_a.png`;
+}

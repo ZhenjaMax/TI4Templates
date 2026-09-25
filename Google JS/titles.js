@@ -1,3 +1,3 @@
-function TITLE(text, fontSize, minLineSize = 0, maxLineSize = 999, separatorSubstring = "", isCentered = false) { return __applyStyles__(__insertNBSPformatted__(text, minLineSize, maxLineSize, separatorSubstring, isCentered), fontSize, false, __wrapFS__); }
+function TITLE(text, fontSize, minLineSize = 0, maxLineSize = 999, separatorSubstring = "", isCentered = false) { return (text.length > 0) ? __applyStyles__(__insertNBSPformatted__(text, minLineSize, maxLineSize, separatorSubstring, isCentered), fontSize, false, __wrapFS__) : ""; }
 
 function SUBTITLE(text, fontSize, color = "") { return (color.length) > 0 ? __wrapColorFS__(text, fontSize, color) : __wrapFS__(text, fontSize); }
