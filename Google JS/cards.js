@@ -47,10 +47,15 @@ function PROMISSORY_CARD(conditionText, resolveText, fontSize) {
   return __getTextFormatted__(texts.join(newLineChar), fontSize, true);
 }
 
-function TECH_CARD(text, commonFontSize, textXshift = 0) { return (__filterTextList__(text).length > 0) ? ((textXshift === 1 ? `$[x:#math;&[x]+${xTextShiftAmount}#]$[width:#math;&[width]-${xTextShiftAmount}#]` : "") + __getPushMarkup__(0, Math.round(commonFontSize/2)) + __getTextFormatted__(text, commonFontSize)) : ""; }
+function TECH_CARD(text, commonFontSize, textXshift = 0) { 
+  return (__filterTextList__(text).length > 0) ? `$[x:#math;&[x]+${techTextXShiftList[textXshift]}#]$[width:#math;&[width]-${techTextXShiftList[textXshift]}#]`
+    + __getPushMarkup__(0, Math.round(commonFontSize/2))
+    + __getTextFormatted__(text, commonFontSize) : "";
+}
 
 function TECH_CARD_UNIT_ABILITIES(
-    abilityXshift, abilityYshift, specsBreakValue,
+    abilityXshift, abilityYshift, 
+    specsBreakValue, fontSize,
     spaceCannonStrength, spaceCannonAmount, 
     antiFighterStrength, antiFighterAmount,
     sustainDamage,
@@ -108,39 +113,32 @@ function TECH_CARD_UNIT_ABILITIES(
   ].filter(a => a.visible);
 
   const lines = [];
+  const specialFontSize = __getTechAbilitySpecialCharacterFontSize__(fontSize),
+        starPush = __getTechAbilityStarPush__(fontSize);
   for (let i = 0; i < visibleAbilities.length; i++) {
     const ability = visibleAbilities[i];
 
-    let line = __wrapFS__(starChar, starFontSize) + __getPushMarkup__(starPush) + ability.label;
+    let line = __wrapFS__(starChar, specialFontSize) + __getPushMarkup__(starPush) + ability.label;
     if (ability.showValue && ability.value != "null" && ability.value != 0) {
       line += spaceChar + ability.value;
     }
     if (ability.amount != null && ability.amount > 1) {
-      line += spaceChar + __wrapFS__(multiplicationChar, starFontSize) + ability.amount;
+      line += spaceChar + __wrapRoundBrackets__(__wrapFS__(multiplicationChar, specialFontSize) + ability.amount);
     }
 
     lines.push(__insertNBSPformatted__(line));
   }
 
-  let overridesStr = "";
-  if (abilityXshift === 1) {
-    overridesStr += `$[x:#math;&[x]+${xAbilityShiftAmount}#]$[width:#math;&[width]-${xAbilityShiftAmount}#]`;
-  }
-  if (abilityYshift === 0) {
-    overridesStr += `$[height:#math;&[height]-${yAbilityShiftAmount}#]`;
-  } else if (abilityYshift === 1) {
-    overridesStr += `$[height:#math;&[height]-${yAbilityShiftAmountSmall}#]`;
-  }
-
   // specsBreakValue = -1,  => переносов нет;
   // specsBreakValue = 0,   => перенос на каждой строке;
   // specsBreakValue > 0,   => перенос после указанной строки один раз
-  return overridesStr + lines
-    .map((line, i) => {
-        if (i === lines.length - 1) return line;
-        if ((specsBreakValue === 0) || (i === specsBreakValue - 1)) return line + breaker;
-        return line + spaceChar + spaceChar;
-    }).join("");
+  return  __wrapLS__(__wrapFS__(`$[x:#math;&[x]+${techAbilityXShiftList[abilityXshift]}#]$[width:#math;&[width]-${techAbilityXShiftList[abilityXshift]}#]` 
+    + `$[height:#math;&[height]-${techAbilityYShiftList[abilityYshift]}#]` 
+    + lines.map((line, i) => {
+      if (i === lines.length - 1) return line;
+      if ((specsBreakValue === 0) || (i === specsBreakValue - 1)) return line + breaker;
+      return line + spaceChar + spaceChar;
+    }).join(""), fontSize), __getTechAbilityLineSpacing__(fontSize));
 }
 
 function TECH_CARD_UNIT_IMAGE(unitType, coordinateType) { return unitImagesPush[unitType][coordinateType] || 0; }

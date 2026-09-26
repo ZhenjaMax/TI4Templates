@@ -22,12 +22,10 @@ const spaceChar = ' ';
 const hyphenChar = '-';
 
 const agendaPush = -43;
-const xTextShiftAmount = 120;
-const xAbilityShiftAmount = 120;
-const yAbilityShiftAmount = 325;
-const yAbilityShiftAmountSmall = 300;
-const starFontSize = 45;
-const starPush = 10;
+
+const techTextXShiftList    = [-75, 0, 120];
+const techAbilityXShiftList = [-75, 0, 120, 625];
+const techAbilityYShiftList = [325, 300, 0];
 
 const unitImagesPush = {
   Mech:        { X: 750, Y: 350 },
@@ -116,6 +114,9 @@ function __getAbilityFontSize__(baseFontSize) { return Math.round(0.8*baseFontSi
 function __getAbilityOffset__(baseFontSize) { return 9 + (baseFontSize > 30 ? 1 : 0) + Math.floor(Math.max(0, baseFontSize-35)/2.5); }
 function __getAbilityOffsetThin__(baseFontSize) { return 8 + Math.ceil(Math.max(0, baseFontSize-35.25)/2.5); }
 function __getParagraphSpacing__(baseFontSize) { return Math.round(0.9*baseFontSize); }
+function __getTechAbilityLineSpacing__(baseFontSize) { return Math.round(2.25*baseFontSize); }
+function __getTechAbilitySpecialCharacterFontSize__(baseFontSize) { return Math.round(1.125*baseFontSize); }
+function __getTechAbilityStarPush__(baseFontSize) { return Math.round(0.25*baseFontSize); }
 
 function __getPushMarkup__(x, y = 0) { return `<push=${x};${y}>`; }
 function __getParagraphMarkup__(baseFontSize) { return breaker + __getPushMarkup__(0, __getParagraphSpacing__(baseFontSize)); }
@@ -130,7 +131,9 @@ function __wrapColor__(text, color) { return `<fc=${color}>${text}</fc>`; }
 function __wrapFS__(text, baseFontSize) { return `<fs=${baseFontSize}>${text}</fs>`; }
 function __wrapColorFS__(text, baseFontSize, color) { return __wrapColor__(__wrapFS__(text, baseFontSize), color); }
 function __wrapItalic__(text, baseFontSize) { return `<f=Myriad Pro Light;${baseFontSize};1;0;1;0>${text}</f>`; }
+function __wrapLS__(text, lineSpacingSize) { return `<ls=${lineSpacingSize}>${text}</ls>`; }
 function __wrapLSFS__(text, baseFontSize) { return `<ls=${__getLineSpacing__(baseFontSize)}>${__wrapFS__(text, baseFontSize)}</ls>`; }
+function __wrapRoundBrackets__(text) { return `(${text})`; }
 
 function __replaceAbilities__(text, baseFontSize, isThin = false) { return text.replace(/«[А-ЯЁA-Z×()\d\s\-<br>]*»/g, __wrapAbility__("$&", baseFontSize, isThin)); }
 function __replaceAgendaBinaryChoices__(text, baseFontSize) { return text.replace(new RegExp(agendaList.join('|'), 'g'), __getPushMarkup__(agendaPush) + __wrapItalic__("$&", baseFontSize)); }
