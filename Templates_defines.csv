@@ -5,7 +5,8 @@ CardNumber,"@[CardIndex,{1}]/@[CardCount,{1}]"
 HR,<ac><img=Images\Symbol_HR.png#(if {1} != #empty then ;{1};{1};750;100)#></ac><br>
 Star,✦
 ColorBlack,0x222222
-GetTechColor,"#(switch;{1};R;0xff5656;Y;0xffff28;G;0x00D54A;B;0x1E92CC;#default;0xffffff)#"
+GetTechColorBox,"#(switch;{1};R;0xff5656;Y;0xffff28;G;0x00D54A;B;0x1E92CC;#default;0xffffff)#"
+GetTechColorName,"#(switch;{1};R;0xff5656;Y;0xffff28;G;0x6CBC36;B;0x1E92CC;#default;0xffffff)#"
 Hit1,<img=Images\Icon_Attack_Hit_Single.png;0.8>
 Hit2,<img=Images\Icon_Attack_Hit_Double.png;0.8>
 Hit3,<img=Images\Icon_Attack_Hit_Triple.png;0.8>
