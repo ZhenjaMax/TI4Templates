@@ -1,16 +1,15 @@
 Define,Value
-Version Number,v0.01
-RowNumber,"#![refline]"
 CardIndex,"#padl;{1};0;![deckindex]#"
 CardCount,"#padl;{1};0;![cardcount]#"
 CardNumber,"@[CardIndex,{1}]/@[CardCount,{1}]"
-CardInRow,"#sc;0;1;1#"
 HR,<ac><img=Images\Symbol_HR.png#(if {1} != #empty then ;{1};{1};750;100)#></ac><br>
-Dot,<img=Images\Symbol_Dot.png>
 Star,✦
-Die,<Img=Images\Symbol_Die.png>
-Cancel,<img=Images\Symbol_No.png>
-TechUp,<ar><img=Images\Icon_Up_Arrow.png;0.9>
+ColorBlack,0x222222
+GetTechColor,"#(switch;{1};R;0xff5656;Y;0xffff28;G;0x00D54A;B;0x1E92CC;#default;0xffffff)#"
+Hit1,<img=Images\Icon_Attack_Hit_Single.png;0.8>
+Hit2,<img=Images\Icon_Attack_Hit_Double.png;0.8>
+Hit3,<img=Images\Icon_Attack_Hit_Triple.png;0.8>
+Hit4,<img=Images\Icon_Attack_Hit_Quad.png;0.8>
 Infantry1,<img=Images\Icon_Infantry_Flag_Single.png;0.8>
 Infantry2,<img=Images\Icon_Infantry_Flag_Double.png;0.8>
 Infantry3,<img=Images\Icon_Infantry_Flag_Triple.png;0.8>
@@ -18,42 +17,3 @@ Fighter1,<img=Images\Icon_Fighter_Ship_Single.png;0.8>
 Fighter2,<img=Images\Icon_Fighter_Ship_Double.png;0.8>
 Fighter3,<img=Images\Icon_Fighter_Ship_Triple.png;0.8>
 Fighter4,<img=Images\Icon_Fighter_Ship_Quad.png;0.8>
-Hit1,<img=Images\Icon_Attack_Hit_Single.png;0.8>
-Hit2,<img=Images\Icon_Attack_Hit_Double.png;0.8>
-Hit3,<img=Images\Icon_Attack_Hit_Triple.png;0.8>
-Hit4,<img=Images\Icon_Attack_Hit_Quad.png;0.8>
-Easy,Images\Faction Reference\Reference_Complexity_Easy.png
-Medium,Images\Faction Reference\Reference_Complexity_Medium.png
-Hard,Images\Faction Reference\Reference_Complexity_Hard.png
-Green,<img=Images\Faction Reference\Reference_Tech_Green.png>
-Red,<img=Images\Faction Reference\Reference_Tech_Red.png>
-Yellow,<img=Images\Faction Reference\Reference_Tech_Yellow.png>
-Blue,<img=Images\Faction Reference\Reference_Tech_Blue.png>
-For,<i><b>For: </b></i>
-Against,<i><b>Against: </b></i>
-Action,<i><b>ACTION: </b></i>
-Attach,<i><b>ATTACH: </b></i>
-LogoEronousTiles,Images\Logo_Eronous_Tiles.png
-HalfSize,"#math;@[Size{1}]/2#"
-HeaderStart,<font=Slider TI4><caps>
-HeaderEnd,</caps>
-BodyStart,<fscl=1.0;1.0><font=Myriad Pro><p=5;5>
-BodyEnd,</p><br>
-TechBlue,<fc=6fdafd><ic=6fdafd>
-TechRed,<fc=ff2222><ic=ff2222>
-TechYellow,<fc=deff00><ic=deff00>
-TechGreen,<fc=65df1c><ic=65df1c>
-StrategyCardColor1,ec1c24
-StrategyCardColor2,f69421
-StrategyCardColor3,fff200
-StrategyCardColor4,39b54a
-StrategyCardColor5,00a99d
-StrategyCardColor6,008ed4
-StrategyCardColor7,15489f
-StrategyCardColor8,752b90
-Planet Ready TextBox,Images\Planets\Planet_Ready_Textbox_{1}.png
-Planet Exhausted TextBox,Images\Planets\Planet_Exhausted_Textbox_{1}.png
-ColorR, 0xff5656
-ColorG, 0x00D54A
-ColorB, 0x1E92CC
-ColorY, 0xffff28
