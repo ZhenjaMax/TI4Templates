@@ -70,44 +70,44 @@ function TECH_CARD_UNIT_ABILITIES(
   const visibleAbilities = [
     {
       label: labels[0],
-      value: antiFighterStrength,
-      amount: antiFighterAmount,
-      visible: antiFighterStrength != "null",
-      showValue: true
-    },
-    {
-      label: labels[1],
-      value: spaceCannonStrength,
-      amount: spaceCannonAmount,
-      visible: spaceCannonStrength != "null",
-      showValue: true
-    },
-    {
-      label: labels[2],
-      value: sustainDamage,
-      amount: null,
-      visible: sustainDamage !== 0,
-      showValue: false
-    },
-    {
-      label: labels[3],
       value: planetaryShield,
       amount: null,
       visible: planetaryShield !== 0,
       showValue: false
     },
     {
-      label: labels[4],
-      value: production,
+      label: labels[1],
+      value: sustainDamage,
       amount: null,
-      visible: production != "null",
+      visible: sustainDamage !== 0,
+      showValue: false
+    },
+    {
+      label: labels[2],
+      value: antiFighterStrength,
+      amount: antiFighterAmount,
+      visible: antiFighterStrength != "null",
+      showValue: true
+    },
+    {
+      label: labels[3],
+      value: bombardmentStrength,
+      amount: bombardmentAmount,
+      visible: bombardmentStrength != "null",
+      showValue: true
+    },
+    {
+      label: labels[4],
+      value: spaceCannonStrength,
+      amount: spaceCannonAmount,
+      visible: spaceCannonStrength != "null",
       showValue: true
     },
     {
       label: labels[5],
-      value: bombardmentStrength,
-      amount: bombardmentAmount,
-      visible: bombardmentStrength != "null",
+      value: production,
+      amount: null,
+      visible: production != "null",
       showValue: true
     }
   ].filter(a => a.visible);
