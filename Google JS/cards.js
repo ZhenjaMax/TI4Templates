@@ -141,10 +141,28 @@ function TECH_CARD_UNIT_ABILITIES(
     }).join(""), fontSize), __getTechAbilityLineSpacing__(fontSize));
 }
 
-function TECH_CARD_UNIT_IMAGE(unitType, coordinateType) { return unitImagesPush[unitType][coordinateType] || 0; }
+function TECH_CARD_UNIT_IMAGE_PARAMETERS(unitType, additionalX = 0, additionalY = 0, isPrinted = false, isUnique = false) {
+  if (unitType === "") {
+    return "";
+  }
+
+  const unitImage = unitImages[unitType];
+
+  const x = Number(additionalX) + ((isPrinted) ? 0 : Number(unitImage.X));
+  const y = Number(additionalY) + ((isPrinted) 
+    ? (isUnique ? Number(unitImage?.pY || 0) : 0) 
+    : Number(unitImage.Y));
+  const coordinatesSubstring = `$[x:${x}]$[y:${y}]`;
+
+  const w = (isPrinted) ? 0 : (unitImage?.W || 0);
+  const h = (isPrinted) ? 0 : (unitImage?.H || 0);
+  let sizeSubstring = ((w > 0) || (h > 0)) ? `$[width:${w}]$[height:${h}]` : "";
+
+  return coordinatesSubstring + sizeSubstring;
+}
 
 function TILE_CROSSHAIR_COORDS(amount, firstPlanetSpecial, secondPlanetSpecial) {
-  if (amount === 0) {
+  if ((amount === 0) || ((firstPlanetSpecial === "") && (secondPlanetSpecial === ""))) {
     return "";
   }
   const preset = `P${firstPlanetSpecial === "L" ? firstPlanetSpecial : ""}${amount}${amount === 1 ? "1" : ""}${amount === 2 ? (firstPlanetSpecial === "" ? "2" : (secondPlanetSpecial === "" ? "1" : "")) : ""}`;

@@ -27,18 +27,18 @@ const techTextXShiftList    = [-75, 0, 120];
 const techAbilityXShiftList = [-75, 0, 120, 625];
 const techAbilityYShiftList = [325, 300, 0];
 
-const unitImagesPush = {
-  Mech:        { X: 750, Y: 350 },
-  Infantry:    { X: 750, Y: 350 },
-  SpaceDock:   { X: 750, Y: 350 },
-  PDS:         { X: 750, Y: 350 },
-  Fighter:     { X: 750, Y: 50  },
-  Flagship:    { X: 300, Y: 50  },
-  Dreadnought: { X: 300, Y: 50  },
-  Carrier:     { X: 300, Y: 50  },
-  Cruiser:     { X: 300, Y: 50  },
-  Destroyer:   { X: 300, Y: 50  },
-  WarSun:      { X: 350, Y: 45  },
+const unitImages = {
+  Flagship:    { X: 0,    Y: 0    },
+  WarSun:      { X: 196,  Y: 0    },
+  Cruiser:     { X: 50,   Y: 50,  pY: 40  },
+  Dreadnought: { X: 150,  Y: 90,  pY: 40  },
+  Destroyer:   { X: 85,   Y: 50,  pY: 40  },
+  PDS:         { X: 220,  Y: 20,  pY: 40  },
+  Carrier:     { X: -30,  Y: 0,   pY: 40, W: 1900,  H: 1280 },
+  Fighter:     { X: 175,  Y: -20  },
+  Infantry:    { X: 435,  Y: 245, W: 1387,  H: 941  },
+  SpaceDock:   { X: 120,  Y: 60   },
+  Mech:        { X: 0,    Y: 0    },
 };
 
 const tileComponents = {
@@ -55,28 +55,28 @@ const tileComponents = {
     PT33: { X: 1629,  Y: 1285 },
   },
   Resource: {
-    P11:  { X: 947,   Y: 1323 },
+    P11:  { X: 947,   Y: 1319 },
     P21:  { X: 644,   Y: 337  },
-    P22:  { X: 1398,  Y: 1200 },
-    P31:  { X: 1818,  Y: 142  },
-    P32:  { X: 325,   Y: 1374 },
-    P33:  { X: 1392,  Y: 1333 },
+    P22:  { X: 1398,  Y: 1197 },
+    P31:  { X: 1818,  Y: 139  },
+    P32:  { X: 330,   Y: 1374 },
+    P33:  { X: 1392,  Y: 1331 },
     PL11: { X: 910,   Y: 1832 },
-    PT22: { X: 1762,  Y: 2042 },
-    PT31: { X: 1856,  Y: 219  },
-    PT33: { X: 1370,  Y: 1402 },
+    PT22: { X: 1760,  Y: 2042 },
+    PT31: { X: 1856,  Y: 217  },
+    PT33: { X: 1370,  Y: 1400 },
   },
   Influence: {
-    P11:  { X: 1100,  Y: 1431 },
-    P21:  { X: 797,   Y: 234  },
-    P22:  { X: 1552,  Y: 1094 },
-    P31:  { X: 1973,  Y: 255  },
-    P32:  { X: 482,   Y: 1483 },
+    P11:  { X: 1098,  Y: 1427 },
+    P21:  { X: 794,   Y: 231  },
+    P22:  { X: 1549,  Y: 1091 },
+    P31:  { X: 1973,  Y: 253  },
+    P32:  { X: 484,   Y: 1483 },
     P33:  { X: 1544,  Y: 1226 },
-    PL11: { X: 1090,  Y: 1896 },
-    PT22: { X: 1917,  Y: 1937 },
-    PT31: { X: 2009,  Y: 331  },
-    PT33: { X: 1523,  Y: 1298 },
+    PL11: { X: 1089,  Y: 1893 },
+    PT22: { X: 1917,  Y: 1933 },
+    PT31: { X: 2006,  Y: 327  },
+    PT33: { X: 1523,  Y: 1294 },
   },
   Icon: {
     P11: { X: 784,  Y: 1255 },
@@ -135,10 +135,9 @@ function __wrapLS__(text, lineSpacingSize) { return `<ls=${lineSpacingSize}>${te
 function __wrapLSFS__(text, baseFontSize) { return `<ls=${__getLineSpacing__(baseFontSize)}>${__wrapFS__(text, baseFontSize)}</ls>`; }
 function __wrapRoundBrackets__(text) { return `(${text})`; }
 
-function __replaceAbilities__(text, baseFontSize, isThin = false) { return text.replace(/«[А-ЯЁA-Z×()\d\s\-<br>]*»/g, __wrapAbility__("$&", baseFontSize, isThin)); }
+function __replaceAbilities__(text, baseFontSize, isThin = false) { return text.replace(/«[А-ЯЁ×()\d\s\-<br>]*»/g, __wrapAbility__("$&", baseFontSize, isThin)); }
 function __replaceAgendaBinaryChoices__(text, baseFontSize) { return text.replace(new RegExp(agendaList.join('|'), 'g'), __getPushMarkup__(agendaPush) + __wrapItalic__("$&", baseFontSize)); }
-function __replaceConditions__(text, baseFontSize) { return text.replace(/(?<=^|\n)(?=.{7,}:)[^\n]*?:/g
-, __wrapCondition__("$&", baseFontSize)); }
+function __replaceConditions__(text, baseFontSize) { return text.replace(/(?<=^|\n)(?=[^.]{7,}:)[^\n]*?:/g, __wrapCondition__("$&", baseFontSize)); }
 function __replaceBreakes__(text) { return text.replaceAll(newLineChar, breaker); }
 function __replaceParagraphs__(text, baseFontSize) { return text.replaceAll(newLineChar, __getParagraphMarkup__(baseFontSize)); }
 
