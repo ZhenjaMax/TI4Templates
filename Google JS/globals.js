@@ -22,6 +22,7 @@ const spaceChar = ' ';
 const hyphenChar = '-';
 
 const agendaPush = -43;
+const factionSheetAbilityPush = -43;
 
 const techTextXShiftList    = [-75, 0, 120];
 const techAbilityXShiftList = [-75, 0, 120, 625];
@@ -31,8 +32,8 @@ const unitImages = {
   Flagship:    { X: 0,    Y: 0    },
   WarSun:      { X: 196,  Y: 0    },
   Cruiser:     { X: 50,   Y: 50,  pY: 40  },
-  Dreadnought: { X: 150,  Y: 90,  pY: 40  },
-  Destroyer:   { X: 85,   Y: 50,  pY: 40  },
+  Dreadnought: { X: 150,  Y: 90,  pY: 90  },
+  Destroyer:   { X: 85,   Y: 50,  pY: 75  },
   PDS:         { X: 220,  Y: 20,  pY: 40  },
   Carrier:     { X: -30,  Y: 0,   pY: 40, W: 1900,  H: 1280 },
   Fighter:     { X: 175,  Y: -20  },
@@ -125,6 +126,7 @@ function __wrapAbility__(text, baseFontSize, isThin = false) {
   let offsetSize = isThin ? __getAbilityOffsetThin__(baseFontSize, isThin) : __getAbilityOffset__(baseFontSize, isThin);
   return `${__getPushMarkup__(0, offsetSize)}<f=Russo One;${__getAbilityFontSize__(baseFontSize)};0;0;0;0>${text}</f>${__getPushMarkup__(0, -offsetSize)}`;
 }
+function __wrapCaps__(text) { return `<caps>${text}</caps>`; }
 function __wrapCentered__(text) { return `<ac>${text}</ac>`; }
 function __wrapCondition__(text, baseFontSize) { return `<f=Myriad Pro;${baseFontSize};1;0;0;0>${text}</f>`; }
 function __wrapColor__(text, color) { return `<fc=${color}>${text}</fc>`; }

@@ -25,6 +25,16 @@ function EXPLORATION_EFFECT_CARD(text, fontSize) { return __getTextFormatted__(t
 
 function EXPLORATION_LORE_CARD(text, fontSize) { return ACTION_LORE_CARD(text, fontSize); };
 
+function FACTION_SHEET_QUOTE(text, author, fontSize) {
+  return __applyStyles__((text + newLineChar + author), fontSize, false, __replaceParagraphs__, __wrapLSFS__)
+}
+
+function FACTION_SHEET_ABILITIES(name1, text1, name2, text2, name3, text3, fontSize) {
+  const nameList = __filterTextList__(name1, name2, name3);
+  const textList = __filterTextList__(text1, text2, text3);
+  return nameList.map((_, index) => __getPushMarkup__(factionSheetAbilityPush) +  __applyStyles__(nameList[index], fontSize, false, __wrapAbility__, __wrapCaps__) + breaker + __getTextFormatted__(textList[index], fontSize)).join(__getParagraphMarkup__(fontSize));
+}
+
 function LEADER_FRONT_CARD(conditionText, resolveText, fontSize) { return __getTextFormatted__(__filterTextList__(conditionText, resolveText).join(newLineChar), fontSize); }
 
 function LEADER_BACK_UNLOCK_CARD(text, fontSize) { return (__filterTextList__(text).length === 0) ? "" : __getTextFormatted__(text, fontSize); }
