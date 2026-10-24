@@ -13,6 +13,14 @@ const abilitiesList = [
   "«РАЗВЁРТЫВАНИЕ»"   // На всякий случай
 ];
 
+const factionBackHeaders = [
+  "✧ Население",
+  "✧ Правительство",
+  "✧ Лидер",
+  "✧ Характер",
+  "✧ Склонность"
+];
+
 const breaker = "<br>";
 const nbsp = '\u00A0';
 const newLineChar = '\n';
@@ -22,7 +30,11 @@ const spaceChar = ' ';
 const hyphenChar = '-';
 
 const agendaPush = -43;
-const factionSheetAbilityPush = -43;
+const factionSheetFrontAbilityPush = -43;
+const factionSheetBackDescriptionYPush = 25;
+const factionSheetBackStartingTechPushX = -112;
+const factionSheetBackStartingTechPushXSpecial = -152;
+const factionSheetBackTextParagraphPush = 100;
 
 const techTextXShiftList    = [-75, 0, 120];
 const techAbilityXShiftList = [-75, 0, 120, 625];
@@ -146,6 +158,13 @@ function __replaceParagraphs__(text, baseFontSize) { return text.replaceAll(newL
 function __filterTextList__(...texts) { return texts.filter(text => (typeof text === "string") && (text.length > 0) && (text !== "null")).map(text => text.trim()); }
 function __applyStyles__(text, baseFontSize, isThin, ...styles) { return styles.reduce((result, replacer) => replacer(result, baseFontSize, isThin), text); }
 function __getTextFormatted__(text, baseFontSize, isThin = false, ...additionalStyles) { return __applyStyles__(text, baseFontSize, isThin, __replaceAbilities__, __replaceConditions__, __replaceParagraphs__, __wrapLSFS__, ...additionalStyles); }
+
+function __getBreakIndexes__(indexString, maxLength = Infinity, minLength = 0) {
+  return [...new Set(indexString.split(/[,\s]+/))]
+    .map(Number)
+    .filter(index => (index < maxLength) && (index > minLength))
+    .sort((a, b) => b - a);
+}
 
 function __insertNBSPformatted__(text, minLineSize = 0, maxLineSize = 999, separatorSubstring = "", isCentered = false) {
   const splitIndex = Math.max(text.indexOf(separatorSubstring), 0) + separatorSubstring.length;
