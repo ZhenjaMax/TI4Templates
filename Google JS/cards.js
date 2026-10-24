@@ -233,6 +233,11 @@ function FACTION_SHEET_BACK_TEXT_PARTS(text, indexString, splitIndex, isLast = f
   const paragraphPush = __getPushMarkup__(factionSheetBackTextParagraphPush);
   // Реальные \n → breaker + отступ абзаца; чистка краёв
   partText = partText.replaceAll(newLineChar, breaker + paragraphPush).trim();
+  if (!isLast && splitIndex !== Infinity && text[splitIndex] != newLineChar) {
+    const fillingText = spaceChar + '0'.repeat(40);
+    const fillingColor = '0'.repeat(8);
+    partText = partText + __wrapColor__(fillingText, fillingColor);
+  }
   if (isLast && partText.startsWith(breaker)) {
     partText = partText.slice(breaker.length);
   }
