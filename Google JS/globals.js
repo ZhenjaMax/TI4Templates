@@ -35,6 +35,7 @@ const factionSheetBackDescriptionYPush = 25;
 const factionSheetBackStartingTechPushX = -112;
 const factionSheetBackStartingTechPushXSpecial = -152;
 const factionSheetBackTextParagraphPush = 100;
+const factionSheetFrontImageLeaderSize = 2800;
 
 const techTextXShiftList    = [-75, 0, 120];
 const techAbilityXShiftList = [-75, 0, 120, 625];
