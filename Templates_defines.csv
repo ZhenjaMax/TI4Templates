@@ -2,19 +2,22 @@ Define,Value
 CardIndex,"#padl;{1};0;![deckindex]#"
 CardCount,"#padl;{1};0;![cardcount]#"
 CardNumber,"@[CardIndex,{1}]/@[CardCount,{1}]"
-HR,<ac><img=Images\Symbol_HR.png#(if {1} != #empty then ;{1};{1};750;100)#></ac><br>
+HR,<ac><img=Images/Symbol_HR.png#(if {1} != #empty then ;{1};{1};750;100)#></ac><br>
 Star,✦
 ColorBlack,0x333333
 GetTechColorBox,"#(switch;{1};R;0xff5656;Y;0xffff28;G;0x41D54A;B;0x1E92CC;#default;0xffffff)#"
 GetTechColorName,"#(switch;{1};R;0xff5656;Y;0xffff28;G;0x6CBC36;B;0x1E92CC;#default;0xffffff)#"
-Hit1,<img=Images\Icon_Attack_Hit_Single.png;0.78>
-Hit2,<img=Images\Icon_Attack_Hit_Double.png;0.78>
-Hit3,<img=Images\Icon_Attack_Hit_Triple.png;0.78>
-Hit4,<img=Images\Icon_Attack_Hit_Quad.png;0.78>
-Infantry1,<img=Images\Icon_Infantry_Flag_Single.png;0.75>
-Infantry2,<img=Images\Icon_Infantry_Flag_Double.png;0.75>
-Infantry3,<img=Images\Icon_Infantry_Flag_Triple.png;0.75>
-Fighter1,<img=Images\Icon_Fighter_Ship_Single.png;0.75>
-Fighter2,<img=Images\Icon_Fighter_Ship_Double.png;0.75>
-Fighter3,<img=Images\Icon_Fighter_Ship_Triple.png;0.75>
-Fighter4,<img=Images\Icon_Fighter_Ship_Quad.png;0.75>
+GetTechColorFactionSheetBack,"#(switch;{1};R;0xD44D51;Y;0xF4DA38;G;0x76BB56;B;0x34AAD4;#default;0xffffff)#"
+Hit1,<img=Images/Icon_Attack_Hit_Single.png;0.78>
+Hit2,<img=Images/Icon_Attack_Hit_Double.png;0.78>
+Hit3,<img=Images/Icon_Attack_Hit_Triple.png;0.78>
+Hit4,<img=Images/Icon_Attack_Hit_Quad.png;0.78>
+Infantry1,<img=Images/Icon_Infantry_Flag_Single.png;0.75>
+Infantry2,<img=Images/Icon_Infantry_Flag_Double.png;0.75>
+Infantry3,<img=Images/Icon_Infantry_Flag_Triple.png;0.75>
+Fighter1,<img=Images/Icon_Fighter_Ship_Single.png;0.75>
+Fighter2,<img=Images/Icon_Fighter_Ship_Double.png;0.75>
+Fighter3,<img=Images/Icon_Fighter_Ship_Triple.png;0.75>
+Fighter4,<img=Images/Icon_Fighter_Ship_Quad.png;0.75>
+outputpath,Output
+apppath,C:/Users/zhenj/OneDrive/Рабочий стол/CardMaker v1.6.0.0a3
