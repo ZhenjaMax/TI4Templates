@@ -81,6 +81,44 @@ function EXPLORATION_EFFECT_CARD(text, fontSize) { return __getTextFormatted__(t
 function EXPLORATION_LORE_CARD(text, fontSize) { return ACTION_LORE_CARD(text, fontSize); };
 
 /**
+ * Формирует список для справочной карты фракии
+ * с маркерами, отступами и настройкой межстрочных интервалов.
+ *
+ * @param {string} text Многострочный текст списка (по одной записи в строке).
+ * @param {number} fontSize Размер шрифта.
+ * @param {number} [mode=0] Режим вывода: 0 — общий список, 1 — список лидеров, 2 — увеличенный интервал между строками.
+ * @return {string} Отформатированная строка списка.
+ * @customfunction
+ */
+function FACTION_REFERENCE_LIST(text, fontSize, mode = 0) {
+  const factionReferenceCommonPushBefore = -70;
+  const factionReferenceCommonPushAfter = 10;
+  const factionReferenceLeadersPushBefore = -60;
+  const factionReferenceLeadersPushAfter = 17;
+  return text.split(newLineChar)
+    .map((textLine, index) => __wrapLSFS__(
+      __getPushMarkup__(mode == 1 ? factionReferenceLeadersPushBefore : factionReferenceCommonPushBefore) + (mode == 1 ? __wrapBold__(__wrapColor__('I'.repeat(Math.max(2-index, 0)), '0'.repeat(8)) + 'I'.repeat(Math.min(1+index, 3))) : starChar) + __getPushMarkup__( mode == 1 ? factionReferenceLeadersPushAfter : factionReferenceCommonPushAfter) + textLine,
+    fontSize))
+    .join(__getParagraphMarkup__(mode == 2 ? fontSize : fontSize*0.2/4.5));
+}
+
+/**
+ * Формирует список стартовых технологий для справочной карты фракции
+ * с цветовыми иконками и обработкой специальных маркеров строк.
+ *
+ * @param {string} text Многострочный список технологий (по одной в строке).
+ * @param {string} colors Строка цветовых кодов, по одному символу на строку ('W' — без цвета).
+ * @return {string} Отформатированная строка списка стартовых технологий.
+ * @customfunction
+ */
+function FACTION_REFERENCE_STARTING_TECHS(text, colors) {
+  return text.split(newLineChar)
+    .map(textLine => textLine.replaceAll('.', ''))
+    .map((line, index) => (colors[index] == 'W' ? '' : (`<img=Images/Req${colors[index]}_a.png;1.15;-4;0>`) + __getPushMarkup__(-75) + `<img=Images/Req${colors[index]}_a.png;1.15;-4;0>`) + (((line[0] == starChar) && (colors[index] != 'W')) ? line.slice(2) : line))
+    .join(breaker);
+}
+
+/**
  * Формирует цитату на лицевой стороне планшета фракции с указанием автора.
  *
  * @param {string} text Текст цитаты.
@@ -115,8 +153,24 @@ function FACTION_SHEET_FRONT_ABILITIES(name1, text1, name2, text2, name3, text3,
     .join(__getParagraphMarkup__(__getAbilityFontSize__(nameFontSize)));
 }
 
+/**
+ * Возвращает разметку изображения лидера на лицевой стороне планшета фракции
+ * с масштабированием по коэффициенту.
+ *
+ * @param {number} [coefficient=1] Коэффициент масштабирования изображения.
+ * @return {string} Строка с параметрами разметки изображения.
+ * @customfunction
+ */
 function FACTION_SHEET_FRONT_IMAGE_LEADER(coefficient = 1) { return `$[y:${-Math.round(factionSheetFrontImageLeaderSize*(coefficient-1))}]$[height:${Math.round(factionSheetFrontImageLeaderSize*coefficient)}]`; }
 
+/**
+ * Возвращает разметку фонового изображения на лицевой стороне планшета фракции
+ * с масштабированием по коэффициенту.
+ *
+ * @param {number} [coefficient=1] Коэффициент масштабирования изображения.
+ * @return {string} Строка с параметрами разметки изображения.
+ * @customfunction
+ */
 function FACTION_SHEET_FRONT_IMAGE_BACKGROUND(coefficient = 1) { return `$[y:${-Math.round(factionSheetFrontImageLeaderSize*((coefficient < 1 ? 1 : coefficient)-1))}]$[height:${Math.round(factionSheetFrontImageLeaderSize*(coefficient < 1 ? 1 : coefficient))}]`; }
 
 /**
