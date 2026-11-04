@@ -139,6 +139,7 @@ function __wrapAbility__(text, baseFontSize, isThin = false) {
   let offsetSize = isThin ? __getAbilityOffsetThin__(baseFontSize, isThin) : __getAbilityOffset__(baseFontSize, isThin);
   return `${__getPushMarkup__(0, offsetSize)}<f=Russo One;${__getAbilityFontSize__(baseFontSize)};0;0;0;0>${text}</f>${__getPushMarkup__(0, -offsetSize)}`;
 }
+function __wrapBold__(text) { return `<b>${text}</b>`; }
 function __wrapCaps__(text) { return `<caps>${text}</caps>`; }
 function __wrapCentered__(text) { return `<ac>${text}</ac>`; }
 function __wrapCondition__(text, baseFontSize) { return `<f=Myriad Pro;${baseFontSize};1;0;0;0>${text}</f>`; }
