@@ -304,13 +304,13 @@
     <Element variable="Images/Factions/Reference/Background Space.png" type="Graphic" x="0" y="0" width="3227" height="1937" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="0" verticalalign="0" colortype="0" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="14" wordspace="0" justifiedtext="false" name="Background Space" font="Arial;12;0;0;0;0" elementcolor="0x202020FF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" gradient="" colormatrix="" />
     <Reference RelativePath="google;DS, US, Absol's Lab Agendas, EN-RU;Экспорт, справочные карты (DS);1Sbo0dp_thdXst6TPKEupuscLo_8vS8TyO2tzdOwN8Vs" Default="true" />
     <exportNameFormat />
-    <exportRotation>90</exportRotation>
+    <exportRotation>0</exportRotation>
     <exportTransparentBackground>false</exportTransparentBackground>
     <exportBackgroundColor>0xFFFFFFFF</exportBackgroundColor>
     <exportPDFAsPageBack>false</exportPDFAsPageBack>
     <exportWidth>0</exportWidth>
     <exportHeight>0</exportHeight>
-    <zoom>2.55</zoom>
+    <zoom>0.3</zoom>
     <exportLayoutBorder>false</exportLayoutBorder>
     <exportLayoutBorderCrossSize>0</exportLayoutBorderCrossSize>
     <exportCropDefinition />
@@ -321,7 +321,7 @@
     <Element variable="Images/Factions/Reference/Back.png" type="Graphic" x="0" y="0" width="3327" height="1937" borderthickness="0" autoscalefont="false" lockaspect="true" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="0" verticalalign="0" colortype="0" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="14" wordspace="0" justifiedtext="false" name="Background" font="Arial;12;0;0;0;0" elementcolor="0x000000FF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" gradient="" colormatrix="" />
     <Reference RelativePath="google;DS, US, Absol's Lab Agendas, EN-RU;Экспорт, справочные карты (DS);1Sbo0dp_thdXst6TPKEupuscLo_8vS8TyO2tzdOwN8Vs" Default="true" />
     <exportNameFormat />
-    <exportRotation>-90</exportRotation>
+    <exportRotation>0</exportRotation>
     <exportTransparentBackground>false</exportTransparentBackground>
     <exportBackgroundColor>0xFFFFFFFF</exportBackgroundColor>
     <exportPDFAsPageBack>true</exportPDFAsPageBack>
@@ -1140,7 +1140,7 @@
   </Layout>
   <Layout combineReferences="true" width="2787" height="2433" buffer="0" Name="Tile Back" defaultCount="1" dpi="600" drawBorder="false">
     <Element variable="#@[CardNumber,2]" type="Text" x="100" y="0" width="350" height="50" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="0" verticalalign="0" colortype="0" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="14" wordspace="0" justifiedtext="false" name="RefNumber" font="Myriad Pro Light;24;1;0;0;0" elementcolor="0x000000FF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="false" outlinecolor="0x000000FF" gradient="" colormatrix="" />
-    <Element variable="Images/Tiles/Cut_Lines_Tile.png" type="Graphic" x="0" y="0" width="2787" height="2433" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="0" verticalalign="0" colortype="0" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="14" wordspace="0" justifiedtext="false" name="Cut Lines" font="Arial;12;0;0;0;0" elementcolor="0x000000FF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="false" outlinecolor="0x000000FF" gradient="" colormatrix="" />
+    <Element variable="Images/Tiles/Cut_Lines_Tile.png" type="Graphic" x="0" y="0" width="2787" height="2433" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="0" verticalalign="0" colortype="0" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="14" wordspace="0" justifiedtext="false" name="Cut Lines" font="Arial;12;0;0;0;0" elementcolor="0x000000FF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" gradient="" colormatrix="" />
     <Element variable="Images/Tiles/Background mask.png" type="Graphic" x="0" y="0" width="2787" height="2433" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="0" verticalalign="0" colortype="0" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="14" wordspace="0" justifiedtext="false" name="Background Mask" font="Arial;12;0;0;0;0" elementcolor="0x000000FF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" gradient="" colormatrix="1;0;0;0;0;0;1;0;0;0;0;0;1;0;0;0;0;0;1;0;0;0;0;0;1" />
     <Element variable="#(if @[Оборотная сторона] != 1 then #nodraw)#@[ID]A" type="FormattedText" x="97" y="1013" width="282" height="400" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="0" verticalalign="1" colortype="0" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="14" wordspace="0" justifiedtext="false" name="ID" font="Handel Gothic;28;0;0;0;0" elementcolor="0xFFFFFFE0" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" gradient="" colormatrix="" />
     <Element variable="#(if @[Оборотная сторона] != 1 then #(if @[Тип тайла] != Red then #nodraw else Images/Tiles/Anomaly Borders.png)# else #(if @[Аномалия оборотная] == 0 then #nodraw else Images/Tiles/Anomaly Borders#(if @[Иконка фракции] != #empty then  Faction)#.png)#)#" type="Graphic" x="0" y="0" width="2787" height="2433" borderthickness="0" autoscalefont="false" lockaspect="false" keeporiginalsize="false" centerimageonorigin="false" outlinethickness="0" rotation="0" horizontalalign="1" verticalalign="1" colortype="2" opacity="255" tilesize="" mirrortype="0" imagemasksurface="false" lineheight="14" wordspace="0" justifiedtext="false" name="Anomaly Borders" font="Arial;12;0;0;0;0" elementcolor="0x000000FF" bordercolor="0x000000FF" backgroundcolor="0x00000000" enabled="true" outlinecolor="0x000000FF" gradient="" colormatrix="" />
